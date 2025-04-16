@@ -17,10 +17,9 @@
                             <th>SN</th>
                             <th>Source</th>
                             <th>Destination</th>
-                            <th>Price</th>
                             <th>Created By</th>
-                            <th>Category ID</th>
                             <th>Status</th>
+                            <th>Action</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -30,9 +29,7 @@
                                 <td>{{$i+1}}</td>
                                 <td>{{$row->source}}</td>
                                 <td>{{$row->destination}}</td>
-                                <td>{{$row->price}}</td>
                                 <td>{{$row->creator->name}}</td>
-                                <td>{{$row->category->title ?? 'N/A' }}</td>
                                 <td>
                                     @if($row->status==1)
                                         <p style="color:Green">Active</p>
@@ -41,7 +38,7 @@
                                     @endif
                                 </td>
 
-                                <td>
+                                 <td>
                                     <a href="{{route('route.show',$row->id)}}" class="btn btn-success btn-sm"><i class="fa fa-eye" aria-hidden="true"></i></a>
                                     <a href="{{route('route.edit',$row->id)}}"  class="btn btn-primary btn-sm"><i class="fa fa-pencil-alt" aria-hidden="true"></i></a>
                                     <form action="{{route('route.destroy',$row->id)}}" method="post" class="d-inline">

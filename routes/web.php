@@ -86,11 +86,11 @@ Route::middleware('auth')->group(function () {
     //Route for our route
     Route::get('/route', [RouteController::class, 'index'])->name('route.index');
     Route::post('/route', [RouteController::class, 'store'])->name('route.store');
-    Route::get('/route', [RouteController::class, 'create'])->name('route.create');
-    Route::get('/route', [RouteController::class, 'show'])->name('route.show');
-    Route::get('/route', [RouteController::class, 'update'])->name('route.edit');
-    Route::get('/route', [RouteController::class, 'index'])->name('route.update');
-    Route::delete('/route', [RouteController::class, 'destroy'])->name('route.destroy');
+    Route::get('/route/create', [RouteController::class, 'create'])->name('route.create');
+    Route::get('/route/{id}', [RouteController::class, 'show'])->name('route.show');
+    Route::get('/route/{id}/edit', [RouteController::class, 'edit'])->name('route.edit');
+    Route::put('/route/{id}', [RouteController::class, 'update'])->name('route.update');
+    Route::delete('/route/{id}', [RouteController::class, 'destroy'])->name('route.destroy');
 
 
     Route::post('/logout', function () {

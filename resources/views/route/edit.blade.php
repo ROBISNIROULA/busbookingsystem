@@ -38,7 +38,7 @@
                     </div>
 
 
-                    <div class="form-group">
+                    {{-- <div class="form-group">
                         <label for="Price">Price</label>
                         <input type="text" name="Price" id="Price" class="form-control" value="{{ old('Price', $route->Price) }}" placeholder="Enter price">
                         class="form-control @error('price') is-invalid @enderror" rows="4"
@@ -47,7 +47,7 @@
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
                         </span>
-                    </div>
+                    </div> --}}
 
                     <!-- Status Field -->
                     <div class="form-group">

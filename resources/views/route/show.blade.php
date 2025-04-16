@@ -20,17 +20,9 @@
                         <td>{!! nl2br(e($route->destination)) !!}</td>
                     </tr>
                     <tr>
-                        <th>Price</th>
-                        <td>{{ $route->Price }}</td>
-                    </tr>
-                    <tr>
-                        <th>Category</th>
-                        <td>{{ $route->category->name ?? 'N/A' }}</td>
-                    </tr>
-                    <tr>
                         <th>Status</th>
                         <td>
-                            @if($post->status == 1)
+                            @if($route->status == 1)
                                 <span class="badge badge-success">Active</span>
                             @else
                                 <span class="badge badge-danger">Inactive</span>
@@ -39,27 +31,23 @@
                     </tr>
                     <tr>
                         <th>Created By</th>
-                        <td>{{ $post->creator->name ?? 'Unknown' }}</td>
+                        <td>{{ $route->creator->name ?? 'Unknown' }}</td>
                     </tr>
                     <tr>
                         <th>Created At</th>
-                        <td>{{ $post->created_at->format('M d, Y H:i:s') }}</td>
+                        <td>{{ $route->created_at->format('M d, Y H:i:s') }}</td>
                     </tr>
                     <tr>
                         <th>Updated At</th>
-                        <td>{{ $post->updated_at->format('M d, Y H:i:s') }}</td>
+                        <td>{{ $route->updated_at->format('M d, Y H:i:s') }}</td>
                     </tr>
                 </table>
             </div>
             <!-- /.card-body -->
 
             <div class="card-footer">
-                <a href="{{ route('posts.index') }}" class="btn btn-secondary">
-                    <i class="fas fa-arrow-left"></i> Back to Posts
-                </a>
-                <a href="{{ route('posts.edit', $post->id) }}" class="btn btn-primary float-right">
-                    <i class="fas fa-edit"></i> Edit Post
-                </a>
+                <a href="{{ route('route.index') }}" class="btn btn-secondary">
+                    <i class="fas fa-arrow-left"></i> Back to route
             </div>
         </div>
         <!-- /.card -->

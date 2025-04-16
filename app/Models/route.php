@@ -8,13 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class route extends Model
 {
     use HasFactory;
-    protected $table='route';
+    protected $table='routes';
     protected $fillable = [
-        'title',
-        'description',
-        'price',
+        'source',
+        'destination',
         'created_by',
-        'category_id',
         'status',
     ];
     public function creator()
@@ -23,8 +21,8 @@ class route extends Model
     }
 
     // Relationship with Category
-    public function category()
-    {
-        return $this->belongsTo(Category::class, 'category_id');
-    }
+    // public function category()
+    // {
+    //     return $this->belongsTo(Category::class, 'category_id');
+    // }
 }
