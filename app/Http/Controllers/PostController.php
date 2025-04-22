@@ -148,7 +148,8 @@ class PostController extends Controller
      * @return \Illuminate\Http\RedirectResponse
      */
     public function destroy($id)
-    {$post = Posts::find($id);
+    {
+        $post = Posts::find($id);
 
         if (!$post) {
             return redirect()->route('posts.index')->with('error', 'Post not found.');

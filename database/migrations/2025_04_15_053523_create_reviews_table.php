@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('reviews', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('uesr_id')->constrained('users');
+            $table->foreignId('user_id')->constrained('users');
             $table->string('description');
             $table->foreignId('bus_id')->constrained('bus');
             $table->timestamps();
@@ -31,4 +31,11 @@ return new class extends Migration
     {
         Schema::dropIfExists('reviews');
     }
+    // app/Models/Review.php
+
+public function bus()
+{
+    return $this->belongsTo(Bus::class);
+}
+
 };

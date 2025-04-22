@@ -10,7 +10,7 @@ class Bus extends Model
     use HasFactory;
     protected $table='buses';
     protected $fillable=[
-            'name',
+        'name',
         'created_by',
         'bus_number',
         'status',
@@ -25,3 +25,4 @@ class Bus extends Model
         return $this->belongsTo(Category::class, 'category_id');
     }
 }
+

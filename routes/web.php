@@ -1,13 +1,18 @@
 <?php
 
+use App\Http\Controllers\BookingdetailController;
 use App\Http\Controllers\BusController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\DriverController;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\PriceController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ReviewsController;
 use App\Http\Controllers\RouteController;
 use App\Http\Controllers\SeatController;
+use App\Models\review;
 use Illuminate\Support\Facades\Route;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -92,6 +97,31 @@ Route::middleware('auth')->group(function () {
     Route::put('/route/{id}', [RouteController::class, 'update'])->name('route.update');
     Route::delete('/route/{id}', [RouteController::class, 'destroy'])->name('route.destroy');
 
+
+    //route for our review
+    Route::get('/review', [ReviewsController::class, 'index'])->name('review.index');
+    Route::post('/review', [ReviewsController::class, 'store'])->name('review.store');
+    Route::get('/review/create', [ReviewsController::class, 'create'])->name('review.create');
+    Route::post('/review/{id}', [ReviewsController::class, 'show'])->name('review.show');
+    Route::post('/review/{id}/edit', [ReviewsController::class, 'edit'])->name('review.edit');
+
+    //route for our price
+    Route::get('/price', [PriceController::class, 'index'])->name('price.index');
+    Route::post('/price', [PriceController::class, 'store'])->name('price.store');
+    Route::get('/price/create', [PriceController::class, 'create'])->name('price.create');
+    Route::get('/price/{id}', [PriceController::class, 'show'])->name('price.show');
+    Route::get('price/{id}/edit', [PriceController::class, 'edit'])->name('price.edit');
+    Route::put('/price/{id}', [PriceController::class, 'update'])->name('price.update');
+    Route::delete('/price/{id}', [PriceController::class, 'destroy'])->name('price.destroy');
+
+    //route for our booking details
+    Route::get('/bookingdetails', [BookingdetailController::class, 'index'])->name('bookingdetails.index');
+    Route::post('/bookinfdetails', [BookingdetailController::class, 'store'])->name('bookingdetails.store');
+    Route::get('/bookingdetails/create', [BookingdetailController::class, 'create'])->name('bookingdetails.create');
+    Route::get('/bookingdetails/{id}', [BookingdetailController::class, 'show'])->name('bookingdetails.show');
+    Route::get('/bookingdetails/{id}/edit', [BookingdetailController::class, 'edit'])->name('bookingdetails.edit');
+    Route::put('/bookingdetails/{id}', [BookingdetailController::class, 'update'])->name('bookingdetails.update');
+    Route::delete('/bookingdetails/{id}', [BookingdetailController::class, 'destroy'])->name('bookingdetails.destroy');
 
     Route::post('/logout', function () {
         auth()->logout();

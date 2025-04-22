@@ -164,6 +164,84 @@
             </ul>
           </li>
 
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-copy"></i>
+              <p>
+              Price
+                <i class="fas fa-angle-left right"></i>
+{{--                <span class="badge badge-info right">6</span>--}}
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{route('price.index')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Price List</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{route('price.create')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Add Price</p>
+                </a>
+
+
+            </ul>
+          </li>
+
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-copy"></i>
+              <p>
+              Booking Details
+                <i class="fas fa-angle-left right"></i>
+{{--                <span class="badge badge-info right">6</span>--}}
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{route('bookingdetails.index')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Booking Details List</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{route('bookingdetails.create')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Add Booking Detail</p>
+                </a>
+
+
+            </ul>
+          </li>
+
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-copy"></i>
+              <p>
+              Review
+                <i class="fas fa-angle-left right"></i>
+{{--                <span class="badge badge-info right">6</span>--}}
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{route('review.index')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>All Reviews</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{route('review.create')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Give Reviews</p>
+                </a>
+
+
+            </ul>
+          </li>
+
 {{--          <li class="nav-item">--}}
 {{--            <a href="#" class="nav-link">--}}
 {{--              <i class="nav-icon fas fa-edit"></i>--}}

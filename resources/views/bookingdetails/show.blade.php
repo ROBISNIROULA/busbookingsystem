@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
-@section('title', 'Review Details')
-@section('pageTitle', 'Review Details')
+@section('title', 'Booking Details')
+@section('pageTitle', 'Booking Details')
 
 @section('content')
     <section class="content">
@@ -9,30 +9,33 @@
         <!-- Post Details Box -->
         <div class="card">
             <div class="card-body">
-                {{-- <!-- Image Display -->
-                @if($post->image)
-                    <div class="text-center mb-4">
-                        <img src="{{ asset('storage/'.$post->image) }}"
-                             alt="Post Image"
-                             class="img-fluid rounded"
-                             style="max-height: 300px;">
-                    </div>
-                @endif --}}
 
                 <table class="table table-bordered">
                     <tr>
                         <th width="30%">User ID</th>
-                        <td>{{ $review->user_id }}</td>
+                        <td>{{ $bookingdetails->user_id }}</td>
                     </tr>
                     <tr>
-                        <th>Description</th>
-                        <td>{!! nl2br(e($review->description)) !!}</td>
+                        <th width="30%">Seat ID</th>
+                        <td>{{ $bookingdetails->seat_id }}</td>
                     </tr>
                     <tr>
-                        <th>Bus ID</th>
-                        <td>{{ $review->bus_id->bus_id ?? 'N/A' }}</td>
+                        <th width="30%">Route ID</th>
+                        <td>{{ $bookingdetails->route_id }}</td>
                     </tr>
-                    {{-- <tr>
+                    <tr>
+                        <th width="30%">Price ID</th>
+                        <td>{{ $bookingdetails->price_id }}</td>
+                    </tr>
+                    <tr>
+                        <th width="30%">Booked Date</th>
+                        <td>{{ $bookingdetails->booked_date }}</td>
+                    </tr>
+                    <tr>
+                        <th width="30%">Bus ID</th>
+                        <td>{{ $bookingdetails->bus_id }}</td>
+                    </tr>
+                    <tr>
                         <th>Status</th>
                         <td>
                             @if($post->status == 1)
@@ -41,7 +44,7 @@
                                 <span class="badge badge-danger">Inactive</span>
                             @endif
                         </td>
-                    </tr> --}}
+                    </tr>
                     <tr>
                         <th>Created By</th>
                         <td>{{ $post->creator->name ?? 'Unknown' }}</td>
@@ -50,17 +53,20 @@
                         <th>Created At</th>
                         <td>{{ $post->created_at->format('M d, Y H:i:s') }}</td>
                     </tr>
-                    {{-- <tr>
+                    <tr>
                         <th>Updated At</th>
                         <td>{{ $post->updated_at->format('M d, Y H:i:s') }}</td>
-                    </tr> --}}
+                    </tr>
                 </table>
             </div>
             <!-- /.card-body -->
 
             <div class="card-footer">
-                <a href="{{ route('review.index') }}" class="btn btn-secondary">
-                    <i class="fas fa-arrow-left"></i> Back to Review
+                <a href="{{ route('bookingdetails.index') }}" class="btn btn-secondary">
+                    <i class="fas fa-arrow-left"></i> Back to Posts
+                </a>
+                <a href="{{ route('bookingdetails.edit', $post->id) }}" class="btn btn-primary float-right">
+                    <i class="fas fa-edit"></i> Edit Post
                 </a>
             </div>
         </div>

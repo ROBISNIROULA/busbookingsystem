@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\review;
 use Illuminate\Http\Request;
 
 class ReviewsController extends Controller
@@ -13,7 +14,11 @@ class ReviewsController extends Controller
      */
     public function index()
     {
-        //
+        $data['rows'] = review::with('user')
+        ->where('id', Auth::id()) // Show only posts created by the logged-in user
+        ->get();
+
+    return view('review.index', compact('data'));
     }
 
     /**
@@ -23,7 +28,7 @@ class ReviewsController extends Controller
      */
     public function create()
     {
-        //
+        return view('review.create');
     }
 
     /**
@@ -34,7 +39,20 @@ class ReviewsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'user_id' => 'required',
+            'description'=>'required',
+            'bus_id'=>'required',
+            
+        ]);
+        review::create([
+            'user_id' => $request->user_id,
+            'description'=>$request->description,
+            'bus_id'=>$request->bus_id,
+            'created_by' => Auth::id(), // Add the authenticated user's ID
+        ]);
+
+        return redirect()->route('review.index')->with('success', 'Review created successfully.');
     }
 
     /**
@@ -45,7 +63,19 @@ class ReviewsController extends Controller
      */
     public function show($id)
     {
-        //
+                // Find the post by ID, but only if it belongs to the logged-in user
+                $review = review::where('id', $id)->
+                with('creator')
+                    ->where('id', Auth::id()) // Ensures the post belongs to the logged-in user
+                    ->first();
+        
+                // If the seats is not found, redirect with an error message
+                if (!$review) {
+                    return redirect()->route('review.index')->with('error', 'Review not found or unauthorized.');
+                }
+        
+                // Return the view for showing the post details
+                return view('review.show', compact('review'));
     }
 
     /**
@@ -56,7 +86,13 @@ class ReviewsController extends Controller
      */
     public function edit($id)
     {
-        //
+        $review = review::find($id);
+
+        if (!$review) {
+            return redirect()->route('review.index')->with('error', 'Review not found.');
+        }
+
+        return view('review.edit', compact('review'));
     }
 
     /**
@@ -68,7 +104,7 @@ class ReviewsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        // 
     }
 
     /**
@@ -79,6 +115,6 @@ class ReviewsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        // 
     }
 }
