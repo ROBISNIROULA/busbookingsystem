@@ -104,7 +104,7 @@
               <li class="nav-item">
                 <a href="{{route('bus.create')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Select Bus</p>
+                  <p>Add Bus</p>
                 </a>
 
 
@@ -175,13 +175,13 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="{{route('price.index')}}" class="nav-link">
+                <a href="{{route('prices.index')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Price List</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{route('price.create')}}" class="nav-link">
+                <a href="{{route('prices.create')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Add Price</p>
                 </a>

@@ -1,6 +1,6 @@
 @extends('layouts.master')
-@section('title', 'All Buses')
-@section('pageTitle','Select Bus')
+@section('title', 'All Prices')
+@section('pageTitle','All Prices')
 @section('content')
     <section class="content">
         <!-- Main content -->
@@ -31,9 +31,9 @@
                                 <td>{{$row->category_id}}</td>
 
                                 <td>
-                                    <a href="{{route('price.show',$row->id)}}" class="btn btn-success btn-sm"><i class="fa fa-eye" aria-hidden="true"></i></a>
-                                    <a href="{{route('price.edit',$row->id)}}"  class="btn btn-primary btn-sm"><i class="fa fa-pencil-alt" aria-hidden="true"></i></a>
-                                    <form action="{{route('price.destroy',$row->id)}}" method="post" class="d-inline">
+                                    <a href="{{route('prices.show',$row->id)}}" class="btn btn-success btn-sm"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                                    <a href="{{route('prices.edit',$row->id)}}"  class="btn btn-primary btn-sm"><i class="fa fa-pencil-alt" aria-hidden="true"></i></a>
+                                    <form action="{{route('prices.destroy',$row->id)}}" method="post" class="d-inline">
                                         <input type="hidden" name="_method" value="delete" />
                                         @csrf
                                         <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-trash" aria-hidden="true"></i></button>

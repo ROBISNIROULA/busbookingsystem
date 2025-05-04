@@ -40,10 +40,10 @@
             <!-- /.card-body -->
 
             <div class="card-footer">
-                <a href="{{ route('price.index') }}" class="btn btn-secondary">
+                <a href="{{ route('prices.index') }}" class="btn btn-secondary">
                     <i class="fas fa-arrow-left"></i> Back to Price
                 </a>
-                <a href="{{ route('price.edit', $bus->id) }}" class="btn btn-primary float-right">
+                <a href="{{ route('prices.edit', $bus->id) }}" class="btn btn-primary float-right">
                     <i class="fas fa-edit"></i> Edit Price
                 </a>
             </div>

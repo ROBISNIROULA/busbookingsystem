@@ -11,8 +11,8 @@
             <div class="card-body">
                 <table class="table table-bordered">
                     <tr>
-                        <th>Title</th>
-                        <td>{{ $bus->title }}</td>
+                        <th>Name</th>
+                        <td>{{ $bus->name }}</td>
                     </tr>
                     <tr>
                         <th>Status</th>

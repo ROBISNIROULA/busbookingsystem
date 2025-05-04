@@ -44,10 +44,11 @@ class seatController extends Controller
         Seat::create([
             'name' => $request->name,
             'seat_number'=>$request->seat_number,
+
             'created_by' => Auth::id(), // Add the authenticated user's ID
         ]);
 
-        return redirect()->route('seats.index')->with('success', 'seats created successfully.');
+        return redirect()->route('seats.index')->with('success', 'Seats created successfully.');
     }
 
     /**

@@ -8,9 +8,9 @@
         <div class="card">
             <div class="card-body">
                  <!-- Image Display -->
-                 @if($post->image)
+                 @if($driver->image)
                  <div class="text-center mb-4">
-                     <img src="{{ asset('storage/'.$post->image) }}"
+                     <img src="{{ asset('storage/'.$driver->image) }}"
                           alt="Post Image"
                           class="img-fluid rounded"
                           style="max-height: 300px;">

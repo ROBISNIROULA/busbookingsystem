@@ -1,6 +1,6 @@
 @extends('layouts.master')
 @section('title', 'All Seats')
-@section('pageTitle','seats')
+@section('pageTitle','Seats')
 @section('content')
     <section class="content">
         <!-- Main content -->

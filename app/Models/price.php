@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class price extends Model
 {
     use HasFactory;
-    protected $table = 'price';
+    protected $table = 'prices';
 
     protected $fillable = [
         'route_id',

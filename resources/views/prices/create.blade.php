@@ -9,7 +9,7 @@
 
                 <!-- Form for Creating Post -->
                 <div class="justify-content-center ">
-                <form method="POST" action="{{ route('price.store') }}">
+                <form method="POST" action="{{ route('prices.store') }}">
                     @csrf
 
                     <!-- Title Field -->

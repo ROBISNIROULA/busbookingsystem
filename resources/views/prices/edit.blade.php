@@ -7,7 +7,7 @@
     <div class="card col-md-11 center-form">
         <div class="col-md-11 center-form">
             <div class="card-body">
-                <form method="POST" action="{{ route('price.update', $price->id) }}">
+                <form method="POST" action="{{ route('prices.update', $price->id) }}">
                     @csrf
                     @method('PUT')
 

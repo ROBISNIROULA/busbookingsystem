@@ -33,7 +33,7 @@
                                 <td>{{$row->seat_id}}</td>
                                 <td>{{$row->route_id}}</td>
                                 <td>{{$row->price_id}}</td>
-                                <td>{{$row->booked date}}</td>
+                                <td>{{$row->booked_date}}</td>
                                 <td>{{$row->bus_id}}</td>
 
                                 <td>

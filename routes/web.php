@@ -106,13 +106,13 @@ Route::middleware('auth')->group(function () {
     Route::post('/review/{id}/edit', [ReviewsController::class, 'edit'])->name('review.edit');
 
     //route for our price
-    Route::get('/price', [PriceController::class, 'index'])->name('price.index');
-    Route::post('/price', [PriceController::class, 'store'])->name('price.store');
-    Route::get('/price/create', [PriceController::class, 'create'])->name('price.create');
-    Route::get('/price/{id}', [PriceController::class, 'show'])->name('price.show');
-    Route::get('price/{id}/edit', [PriceController::class, 'edit'])->name('price.edit');
-    Route::put('/price/{id}', [PriceController::class, 'update'])->name('price.update');
-    Route::delete('/price/{id}', [PriceController::class, 'destroy'])->name('price.destroy');
+    Route::get('/price', [PriceController::class, 'index'])->name('prices.index');
+    Route::post('/price', [PriceController::class, 'store'])->name('prices.store');
+    Route::get('/price/create', [PriceController::class, 'create'])->name('prices.create');
+    Route::get('/price/{id}', [PriceController::class, 'show'])->name('prices.show');
+    Route::get('price/{id}/edit', [PriceController::class, 'edit'])->name('prices.edit');
+    Route::put('/price/{id}', [PriceController::class, 'update'])->name('prices.update');
+    Route::delete('/price/{id}', [PriceController::class, 'destroy'])->name('prices.destroy');
 
     //route for our booking details
     Route::get('/bookingdetails', [BookingdetailController::class, 'index'])->name('bookingdetails.index');

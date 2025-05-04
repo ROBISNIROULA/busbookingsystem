@@ -18,7 +18,7 @@ class PriceController extends Controller
         ->where('route_id', Auth::id())
         ->get();
 
-    return view('price.index', compact('data'));
+    return view('prices.index', compact('data'));
     }
 
     /**
@@ -29,7 +29,8 @@ class PriceController extends Controller
     public function create()
     {
         $price = price::all();
-        return view('price.create',compact('price'));
+        return view('prices.create',compact('price'));
+        
     }
 
     /**
@@ -55,7 +56,7 @@ class PriceController extends Controller
             'status' => $request->status,
         ]);
 
-        return redirect()->route('price.index')->with('success', 'Price created successfully.');
+        return redirect()->route('prices.index')->with('success', 'Price created successfully.');
     }
 
     /**
@@ -72,11 +73,11 @@ class PriceController extends Controller
         ->first();
 
     if (!$price) {
-        return redirect()->route('price.index')
+        return redirect()->route('prices.index')
             ->with('error', 'Price not found.');
     }
 
-    return view('price.show', compact('price'));
+    return view('prices.show', compact('price'));
     }
 
     /**
@@ -90,10 +91,10 @@ class PriceController extends Controller
         $price = price::find($id);
 
         if (!$price) {
-            return redirect()->route('price.index')->with('error', 'Price not found.');
+            return redirect()->route('prices.index')->with('error', 'Price not found.');
         }
 
-        return view('price.edit', compact('price'));
+        return view('prices.edit', compact('price'));
     }
 
     /**
@@ -108,7 +109,7 @@ class PriceController extends Controller
         $price = price::find($id);
 
         if (!$price) {
-            return redirect()->route('price.index')->with('error', 'Price not found.');
+            return redirect()->route('prices.index')->with('error', 'Price not found.');
         }
 
         // Validate the request
@@ -123,7 +124,7 @@ class PriceController extends Controller
             'status' => $request->status,
         ]);
 
-        return redirect()->route('price.index')->with('success', 'Price updated successfully.');
+        return redirect()->route('prices.index')->with('success', 'Price updated successfully.');
     }
 
     /**
@@ -137,9 +138,9 @@ class PriceController extends Controller
         $price = price::find($id);
 
         if (!$price) {
-            return redirect()->route('price.index')->with('error', 'Price not found.');
+            return redirect()->route('prices.index')->with('error', 'Price not found.');
         }
         $price->delete();
-        return redirect()->route('price.index')->with('success', 'Price deleted successfully.');
+        return redirect()->route('prices.index')->with('success', 'Price deleted successfully.');
     }
 }

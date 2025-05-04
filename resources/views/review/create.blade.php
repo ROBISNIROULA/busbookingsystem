@@ -40,10 +40,19 @@
 
 
                         <div class="form-group">
-                            <label for="title">Bus ID</label>
-                            <input type="text" name="bus_id" id="bus_id"
-                                   class="form-control @error('bus_id') is-invalid @enderror" value="{{ old('bus_id') }}"
-                                   required>
+                            <label for="Bus_id">Bus ID</label>
+                            <select name="bus_id" id="bus_id"
+                                    class="form-control @error('bus_id') is-invalid @enderror" required>
+                                <option value="">Select Bus</option>
+                                @isset($buses)
+                                @foreach($buses as $bus)
+                                <option
+                                    value="{{ $bus->id }}" {{ old('bus_id') == $bus->id ? 'selected' : '' }}>
+                                    {{ $bus->title }}
+                                </option>
+                            @endforeach
+                                @endisset
+                            </select>
                             @error('bus_id')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>

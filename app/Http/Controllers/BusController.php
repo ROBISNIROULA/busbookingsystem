@@ -58,7 +58,7 @@ class BusController extends Controller
             'created_by' => Auth::id(), // Add the authenticated user's ID
         ]);
 
-        return redirect()->route('bus.index')->with('success', 'bus created successfully.');
+        return redirect()->route('bus.index')->with('success', 'Bus created successfully.');
     }
 
     /**

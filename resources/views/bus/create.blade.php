@@ -14,8 +14,8 @@
 
                     <!-- Title Field -->
                     <div class="form-group">
-                        <label for="title">Title</label>
-                        <input type="text" name="name" id="title"
+                        <label for="title">Name</label>
+                        <input type="text" name="name" id="name"
                                class="form-control @error('name') is-invalid @enderror" value="{{ old('name') }}"
                                required>
                         @error('name')

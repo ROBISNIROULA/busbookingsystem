@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('user_id')->constrained('users');
             $table->string('description');
-            $table->foreignId('bus_id')->constrained('bus');
+            $table->foreignId('bus_id')->constrained('buses','id');
             $table->timestamps();
         });
     }
@@ -31,11 +31,4 @@ return new class extends Migration
     {
         Schema::dropIfExists('reviews');
     }
-    // app/Models/Review.php
-
-public function bus()
-{
-    return $this->belongsTo(Bus::class);
-}
-
 };

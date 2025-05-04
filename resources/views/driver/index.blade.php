@@ -15,6 +15,7 @@
                     <thead>
                         <tr>
                             <th>SN</th>
+                            <th>Image</th>
                             <th>Name</th>
                             <th>Mobile</th>
                             <th>Address</th>

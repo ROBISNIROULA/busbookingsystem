@@ -68,7 +68,7 @@
                         <div class="form-group">
                             <label for="booked date">Booked Date</label>
                             <textarea name="booked date" id="booked date"
-                                      class="form-control @error('booked date') is-invalid @enderror" rows="4"
+                                      class="form-control @error('booked date') is-invalid @enderror" 
                                       required>{{ old('booked date') }}</textarea>
                             @error('booked date')
                             <span class="invalid-feedback" role="alert">
